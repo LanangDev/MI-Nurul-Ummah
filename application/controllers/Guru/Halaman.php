@@ -19,6 +19,6 @@ class Halaman extends CI_Controller {
         $data['pengumuman_terbaru'] = $this->Halaman->get_pengumuman_terbaru(4);
         $data['galeri_terbaru']     = $this->Halaman->get_galeri_terbaru(4);
 
-        $this->template->load('guru/view', 'guru/halaman', $data);
+        $this->Template->load('guru/view', 'guru/halaman', $data);
     }
 }

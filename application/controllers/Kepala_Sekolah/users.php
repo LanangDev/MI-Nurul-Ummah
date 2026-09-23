@@ -25,7 +25,7 @@ class Users extends CI_Controller {
                 'judul' => 'Halaman User - MI Nurul Ummah',
                 'user'  => $user
             ];
-		$this->template->load('kepala_sekolah/view', 'kepala_sekolah/users', $data);
+		$this->Template->load('kepala_sekolah/view', 'kepala_sekolah/users', $data);
 	}
    public function simpan() {
     // Nama file

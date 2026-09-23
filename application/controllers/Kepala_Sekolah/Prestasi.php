@@ -39,7 +39,7 @@ class Prestasi extends CI_Controller {
             'prestasi' => $prestasi,
             'kategori' => $kategori
         ];
-        $this->template->load('kepala_sekolah/view', 'kepala_sekolah/prestasi', $data);
+        $this->Template->load('kepala_sekolah/view', 'kepala_sekolah/prestasi', $data);
     }
 
     public function simpan()

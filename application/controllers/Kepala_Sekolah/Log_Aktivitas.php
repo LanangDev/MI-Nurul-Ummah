@@ -33,6 +33,6 @@ class Log_Aktivitas extends CI_Controller {
             'cari'         => $cari,
         ];
 
-        $this->template->load('kepala_sekolah/view', 'kepala_sekolah/log_aktivitas', $data);
+        $this->Template->load('kepala_sekolah/view', 'kepala_sekolah/log_aktivitas', $data);
     }
 }

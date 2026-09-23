@@ -14,7 +14,7 @@ class Pengumuman extends CI_Controller {
         $data['judul']      = 'Pengumuman - MI Nurul Ummah';
         $data['pengumuman'] = $this->pengumuman->get_all();
 
-        $this->template->load('kepala_sekolah/view', 'kepala_sekolah/pengumuman', $data);
+        $this->Template->load('kepala_sekolah/view', 'kepala_sekolah/pengumuman', $data);
     }
 
     public function simpan()

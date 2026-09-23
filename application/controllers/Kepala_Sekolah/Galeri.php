@@ -14,7 +14,7 @@ class Galeri extends CI_Controller {
         $data['judul']  = 'Galeri Kegiatan - MI Nurul Ummah';
         $data['galeri'] = $this->galeri->get_all();
 
-        $this->template->load('kepala_sekolah/view', 'kepala_sekolah/galeri', $data);
+        $this->Template->load('kepala_sekolah/view', 'kepala_sekolah/galeri', $data);
     }
 
     public function simpan()

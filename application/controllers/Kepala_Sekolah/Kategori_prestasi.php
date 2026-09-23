@@ -26,7 +26,7 @@ class Kategori_prestasi extends CI_Controller {
             'judul'    => 'Halaman Kategori - MI Nurul Ummah',
             'kategori' => $kategori
         ];
-        $this->template->load('kepala_sekolah/view', 'kepala_sekolah/kategori_prestasi', $data);
+        $this->Template->load('kepala_sekolah/view', 'kepala_sekolah/kategori_prestasi', $data);
     }
 
     public function simpan() {

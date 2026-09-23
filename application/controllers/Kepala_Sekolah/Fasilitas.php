@@ -21,7 +21,7 @@ class Fasilitas extends CI_Controller
     {
         $data['judul']     = 'Data Fasilitas - MI Nurul Ummah';
         $data['fasilitas'] = $this->Fasilitas_model->get_all();
-        $this->template->load('kepala_sekolah/view','kepala_sekolah/fasilitas', $data);
+        $this->Template->load('kepala_sekolah/view','kepala_sekolah/fasilitas', $data);
     }
 
     // Simpan data fasilitas baru

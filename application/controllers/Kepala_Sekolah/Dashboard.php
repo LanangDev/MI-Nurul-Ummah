@@ -19,6 +19,6 @@ class Dashboard extends CI_Controller {
         $data['pengumuman_terbaru'] = $this->dashboard->get_pengumuman_terbaru(4);
         $data['galeri_terbaru']     = $this->dashboard->get_galeri_terbaru(4);
 
-        $this->template->load('kepala_sekolah/view', 'kepala_sekolah/dashboard', $data);
+        $this->Template->load('kepala_sekolah/view', 'kepala_sekolah/dashboard', $data);
     }
 }

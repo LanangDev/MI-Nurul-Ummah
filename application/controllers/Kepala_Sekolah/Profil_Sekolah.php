@@ -14,7 +14,7 @@ class Profil_sekolah extends CI_Controller {
         $data['judul']  = 'Profil Sekolah - MI Nurul Ummah';
         $data['profil'] = $this->profil->get_profil();
 
-        $this->template->load('kepala_sekolah/view', 'kepala_sekolah/profil_sekolah', $data);
+        $this->Template->load('kepala_sekolah/view', 'kepala_sekolah/profil_sekolah', $data);
     }
 
     public function simpan()

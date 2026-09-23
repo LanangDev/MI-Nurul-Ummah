@@ -25,7 +25,7 @@ class Data_Guru extends CI_Controller {
                 'judul' => 'Halaman guru - MI Nurul Ummah',
                 'guru'  => $guru
             ];
-		$this->template->load('kepala_sekolah/view', 'kepala_sekolah/data_guru', $data);
+		$this->Template->load('kepala_sekolah/view', 'kepala_sekolah/data_guru', $data);
 	}
   public function simpan() {
 

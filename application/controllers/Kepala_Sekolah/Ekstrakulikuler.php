@@ -16,7 +16,7 @@ class Ekstrakulikuler extends CI_Controller {
         $data['ekstra'] = $this->ekskel->get_all();
 
         // Menggunakan template parser / template library yang memuat $contents
-        $this->template->load('kepala_sekolah/view', 'kepala_sekolah/ekstrakulikuler', $data);
+        $this->Template->load('kepala_sekolah/view', 'kepala_sekolah/ekstrakulikuler', $data);
     }
 
     public function simpan()

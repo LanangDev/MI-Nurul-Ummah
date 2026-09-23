@@ -25,7 +25,7 @@ class PPDB extends CI_Controller {
                 'judul' => 'Halaman PPDB - MI Nurul Ummah',
                 'ppdb'  => $ppdb
             ];
-		$this->template->load('guru/view', 'guru/ppdb', $data);
+		$this->Template->load('guru/view', 'guru/ppdb', $data);
 	}
    public function simpan() {
     // Nama file

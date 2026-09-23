@@ -14,7 +14,7 @@ class Kontak extends CI_Controller {
         $data['judul']  = 'Kontak Sekolah - MI Nurul Ummah';
         $data['kontak'] = $this->kontak->get_kontak();
 
-        $this->template->load('kepala_sekolah/view', 'kepala_sekolah/kontak', $data);
+        $this->Template->load('kepala_sekolah/view', 'kepala_sekolah/kontak', $data);
     }
 
     public function simpan()
