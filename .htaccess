@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Ganti /projectci/ jika projectmu di subfolder, kalau di root gunakan /
+    RewriteBase /MI_NURUL_UMMAH/
+
+    # Jika file atau folder fisik ada, lewati rewrite
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Rewrite semua request ke index.php
+    RewriteRule ^(.*)$ index.php/$1 [L]
+</IfModule>
