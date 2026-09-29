@@ -1,50 +1,59 @@
 # ============================================
 # Dockerfile - MI Nurul Ummah (CodeIgniter 3)
-# PHP 7.4 + Apache (tanpa MySQL, MySQL terpisah)
+# PHP 8.0 + Nginx + PHP-FPM (Alpine)
 # ============================================
 
-FROM php:7.4-apache
+FROM php:8.0-fpm-alpine
 
-# Install ekstensi PHP yang dibutuhkan
-RUN docker-php-ext-install mysqli pdo pdo_mysql \
-    && a2enmod rewrite
-
-# Fix Debian Bullseye EOL - pindahkan ke archive repository
-RUN sed -i '/debian-security/d' /etc/apt/sources.list \
-    && sed -i '/bullseye-updates/d' /etc/apt/sources.list \
-    && sed -i 's|deb.debian.org/debian|archive.debian.org/debian|g' /etc/apt/sources.list \
-    && apt-get -o Acquire::Check-Valid-Until=false update
-
-# Install GD library (untuk upload/manipulasi gambar)
-RUN apt-get install -y \
+# Install system dependencies
+RUN apk add --no-cache \
+    nginx \
+    curl \
+    bash \
     libpng-dev \
-    libjpeg62-turbo-dev \
-    libfreetype6-dev \
-    && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install gd \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
+    libjpeg-turbo-dev \
+    freetype-dev \
+    oniguruma-dev \
+    libzip-dev \
+    zip \
+    unzip
 
-# Set DocumentRoot ke /var/www/html
-ENV APACHE_DOCUMENT_ROOT=/var/www/html
-
-# Konfigurasi Apache agar AllowOverride All (supaya .htaccess berfungsi)
-RUN sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf
+# Install PHP extensions
+RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install \
+        mysqli \
+        pdo \
+        pdo_mysql \
+        mbstring \
+        gd \
+        zip
 
 # Konfigurasi PHP upload
 RUN echo "upload_max_filesize = 20M" > /usr/local/etc/php/conf.d/uploads.ini \
     && echo "post_max_size = 25M" >> /usr/local/etc/php/conf.d/uploads.ini \
     && echo "max_execution_time = 300" >> /usr/local/etc/php/conf.d/uploads.ini
 
+# Set working directory
+WORKDIR /var/www/html
+
 # Copy semua source code ke container
-COPY . /var/www/html/
+COPY . .
+
+# Copy nginx config
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY default.conf /etc/nginx/conf.d/default.conf
 
 # Set permission untuk folder upload dan cache
-RUN chown -R www-data:www-data /var/www/html/ \
-    && chmod -R 755 /var/www/html/ \
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 755 /var/www/html \
     && chmod -R 775 /var/www/html/upload \
     && chmod -R 775 /var/www/html/application/cache \
     && chmod -R 775 /var/www/html/application/logs
 
+# Buat direktori yang dibutuhkan nginx
+RUN mkdir -p /run/nginx
+
 EXPOSE 80
 
-CMD ["apache2-foreground"]
+# Start nginx + php-fpm
+CMD ["sh", "-c", "php-fpm & nginx -g 'daemon off;'"]
