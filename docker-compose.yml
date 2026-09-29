@@ -9,27 +9,23 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: mi_nurul_ummah_app
+    container_name: imam_miNurulUmmah_app
     ports:
       - "8080:80"
     volumes:
       # Volume untuk folder upload agar data persisten
-      - upload_data:/var/www/html/upload
+      - imam_miNurulUmmah_upload_data:/var/www/html/upload
     environment:
       - CI_ENV=development
     restart: unless-stopped
-    # Jika MySQL di container terpisah, gunakan network yang sama
-    # Contoh: docker network create mi_network
-    # lalu tambahkan network di bawah ini
     networks:
-      - mi_network
+      - dokploy-network
 
 networks:
-  mi_network:
-    # Gunakan external jika network sudah dibuat manual
-    # external: true
-    driver: bridge
+  dokploy-network:
+    name: dokploy-network
+    external: true
 
 volumes:
-  upload_data:
+  imam_miNurulUmmah_upload_data:
     driver: local
