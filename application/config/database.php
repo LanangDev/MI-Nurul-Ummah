@@ -75,8 +75,8 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => getenv('DB_HOST') ?: 'localhost',
-	'username' => getenv('DB_USERNAME') ?: 'root',
+	'hostname' => getenv('DB_HOST') ?: 'proyek-kewirausahaan-databaseoneforall-5irrgd',
+	'username' => getenv('DB_USERNAME') ?: 'firabakery_user',
 	'password' => getenv('DB_PASSWORD') ?: '',
 	'database' => getenv('DB_DATABASE') ?: 'mi_nurul_ummah',
 	'dbdriver' => 'mysqli',
