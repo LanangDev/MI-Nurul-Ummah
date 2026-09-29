@@ -306,7 +306,7 @@
 						<div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
 							aria-labelledby="notificationDropdown">
 							<p class="mb-0 font-weight-normal float-left dropdown-header">Settings</p>
-							<a href="<?= base_url('guru/profil');?>" class="dropdown-item preview-item">
+							<a href="<?= base_url('guru/Profil');?>" class="dropdown-item preview-item">
 								<i class="icon-head"></i> Profile
 							</a>
 							<a href="<?= base_url('auth/logout');?>" class="dropdown-item preview-item">
@@ -339,7 +339,7 @@
 				</div>
 				<ul class="nav">
 					<li class="nav-item">
-						<a class="nav-link" href="<?= base_url('Guru/halaman'); ?>">
+						<a class="nav-link" href="<?= base_url('Guru/Halaman'); ?>">
 							<i class="mdi mdi-home menu-icon"></i>
 							<span class="menu-title">Halaman</span>
 						</a>
@@ -351,13 +351,13 @@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="<?= base_url('Guru/pengumuman'); ?>">
+						<a class="nav-link" href="<?= base_url('Guru/Pengumuman'); ?>">
 							<i class="mdi mdi-note-plus menu-icon"></i>
 							<span class="menu-title">Pengumuman</span>
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="<?= base_url('Guru/ppdb'); ?>">
+						<a class="nav-link" href="<?= base_url('Guru/PPDB'); ?>">
 							<i class="mdi mdi-book-open menu-icon"></i>
 							<span class="menu-title">PPDB</span>
 						</a>
