@@ -1,0 +1,35 @@
+# ============================================
+# Docker Compose - MI Nurul Ummah Web Sekolah
+# Hanya app (PHP+Apache), tanpa MySQL
+# MySQL sudah dibuat terpisah
+# ============================================
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mi_nurul_ummah_app
+    ports:
+      - "8080:80"
+    volumes:
+      # Volume untuk folder upload agar data persisten
+      - upload_data:/var/www/html/upload
+    environment:
+      - CI_ENV=development
+    restart: unless-stopped
+    # Jika MySQL di container terpisah, gunakan network yang sama
+    # Contoh: docker network create mi_network
+    # lalu tambahkan network di bawah ini
+    networks:
+      - mi_network
+
+networks:
+  mi_network:
+    # Gunakan external jika network sudah dibuat manual
+    # external: true
+    driver: bridge
+
+volumes:
+  upload_data:
+    driver: local
