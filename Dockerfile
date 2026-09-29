@@ -10,9 +10,9 @@ RUN docker-php-ext-install mysqli pdo pdo_mysql \
     && a2enmod rewrite
 
 # Fix Debian Bullseye EOL - pindahkan ke archive repository
-RUN sed -i 's|deb.debian.org/debian-security|archive.debian.org/debian-security|g' /etc/apt/sources.list \
-    && sed -i 's|deb.debian.org/debian |archive.debian.org/debian |g' /etc/apt/sources.list \
+RUN sed -i '/debian-security/d' /etc/apt/sources.list \
     && sed -i '/bullseye-updates/d' /etc/apt/sources.list \
+    && sed -i 's|deb.debian.org/debian|archive.debian.org/debian|g' /etc/apt/sources.list \
     && apt-get -o Acquire::Check-Valid-Until=false update
 
 # Install GD library (untuk upload/manipulasi gambar)
