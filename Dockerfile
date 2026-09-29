@@ -21,12 +21,12 @@ RUN apk add --no-cache \
 # Install PHP extensions
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install \
-        mysqli \
-        pdo \
-        pdo_mysql \
-        mbstring \
-        gd \
-        zip
+    mysqli \
+    pdo \
+    pdo_mysql \
+    mbstring \
+    gd \
+    zip
 
 # Konfigurasi PHP upload
 RUN echo "upload_max_filesize = 20M" > /usr/local/etc/php/conf.d/uploads.ini \
