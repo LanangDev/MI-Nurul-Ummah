@@ -1,0 +1,33 @@
+# ============================================
+# Docker Compose - MI Nurul Ummah Web Sekolah
+# Hanya app (PHP+Apache), tanpa MySQL
+# MySQL sudah dibuat terpisah
+# ============================================
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: imam_miNurulUmmah_app
+    ports:
+      - "8081:80"
+    env_file:
+      - .env
+    volumes:
+      # Volume untuk folder upload agar data persisten
+      - imam_miNurulUmmah_upload_data:/var/www/html/upload
+    environment:
+      - CI_ENV=development
+    restart: unless-stopped
+    networks:
+      - dokploy-network
+
+networks:
+  dokploy-network:
+    name: dokploy-network
+    external: true
+
+volumes:
+  imam_miNurulUmmah_upload_data:
+    driver: local

@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'mi_nurul_ummah',
+	'hostname' => getenv('DB_HOST') ?: 'proyek-kewirausahaan-databaseoneforall-5irrgd',
+	'username' => getenv('DB_USERNAME') ?: 'firabakery_user',
+	'password' => getenv('DB_PASSWORD') ?: '',
+	'database' => getenv('DB_DATABASE') ?: 'mi_nurul_ummah',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

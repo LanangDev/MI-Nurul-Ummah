@@ -338,19 +338,19 @@
 				</div>
 				<ul class="nav">
 					<li class="nav-item">
-						<a class="nav-link" href="<?= base_url('Kepala_Sekolah/dashboard'); ?>">
+						<a class="nav-link" href="<?= base_url('Kepala_Sekolah/Dashboard'); ?>">
 							<i class="mdi mdi-home menu-icon"></i>
 							<span class="menu-title">Dashboard</span>
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="<?= base_url('Kepala_Sekolah/users'); ?>">
+						<a class="nav-link" href="<?= base_url('Kepala_Sekolah/Users'); ?>">
 							<i class="mdi mdi-account menu-icon"></i>
 							<span class="menu-title">Users</span>
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="<?= base_url('Kepala_Sekolah/data_guru'); ?>">
+						<a class="nav-link" href="<?= base_url('Kepala_Sekolah/Data_Guru'); ?>">
 							<i class="mdi mdi-account-multiple menu-icon"></i>
 							<span class="menu-title">Data Guru</span>
 						</a>
@@ -362,55 +362,55 @@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="<?= base_url('Kepala_Sekolah/fasilitas'); ?>">
+						<a class="nav-link" href="<?= base_url('Kepala_Sekolah/Fasilitas'); ?>">
 							<i class="mdi mdi-home-assistant menu-icon"></i>
 							<span class="menu-title">Fasilitas</span>
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="<?= base_url('Kepala_Sekolah/pengumuman'); ?>">
+						<a class="nav-link" href="<?= base_url('Kepala_Sekolah/Pengumuman'); ?>">
 							<i class="mdi mdi-note-plus menu-icon"></i>
 							<span class="menu-title">Pengumuman</span>
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="<?= base_url('Kepala_Sekolah/ppdb'); ?>">
+						<a class="nav-link" href="<?= base_url('Kepala_Sekolah/PPDB'); ?>">
 							<i class="mdi mdi-book-open menu-icon"></i>
 							<span class="menu-title">PPDB</span>
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="<?= base_url('Kepala_Sekolah/ekstrakulikuler'); ?>">
+						<a class="nav-link" href="<?= base_url('Kepala_Sekolah/Ekstrakulikuler'); ?>">
 							<i class="mdi mdi-dumbbell menu-icon"></i>
 							<span class="menu-title">Ekstrakulikuler</span>
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="<?= base_url('Kepala_Sekolah/kategori_prestasi'); ?>">
+						<a class="nav-link" href="<?= base_url('Kepala_Sekolah/Kategori_prestasi'); ?>">
 							<i class="mdi mdi-format-list-bulleted menu-icon"></i>
 							<span class="menu-title">Kategori Prestasi</span>
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="<?= base_url('Kepala_Sekolah/prestasi'); ?>">
+						<a class="nav-link" href="<?= base_url('Kepala_Sekolah/Prestasi'); ?>">
 							<i class="mdi mdi-trophy menu-icon"></i>
 							<span class="menu-title">Prestasi</span>
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="<?= base_url('Kepala_Sekolah/profil_sekolah'); ?>">
+						<a class="nav-link" href="<?= base_url('Kepala_Sekolah/Profil_Sekolah'); ?>">
 							<i class="mdi mdi-school menu-icon"></i>
 							<span class="menu-title">Profil Sekolah</span>
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="<?= base_url('Kepala_Sekolah/log_aktivitas'); ?>">
+						<a class="nav-link" href="<?= base_url('Kepala_Sekolah/Log_Aktivitas'); ?>">
 							<i class="mdi mdi-account-clock menu-icon"></i>
 							<span class="menu-title">Log Aktivitas</span>
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="<?= base_url('Kepala_Sekolah/kontak'); ?>">
+						<a class="nav-link" href="<?= base_url('Kepala_Sekolah/Kontak'); ?>">
 							<i class="mdi mdi-account-convert menu-icon"></i>
 							<span class="menu-title">Kontak</span>
 						</a>
